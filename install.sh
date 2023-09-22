@@ -37,9 +37,13 @@ echo "[*] Configure doas(1)"
 touch /etc/doas.conf
 echo "permit persist keepenv $user as root" > /etc/doas.conf
 
-echo "[*] Configure Memory Limits for Programs
+echo "[*] Configure Memory Limits for Programs"
 usermod -G staff $user
 cp -f ./login.conf /etc/login.conf
+
+echo [*] Configure xenodm
+cp -f ./Xsetup_0 /etc/X11/xenodm/Xsetup_0
+
 
 
 echo "[*] Run Syspatch"
