@@ -4,7 +4,7 @@
 prefix="/usr/X11R6"
 exec_prefix="${prefix}"
 
-${exec_prefix}/bin/xsetroot -fg \#6f6f6f -bg \#bfbfbf -bitmap ${prefix}/include/X11/bitmaps/root_weave
+${exec_prefix}/bin/xsetroot -bg \#1e1e1e -fg \#1e1e1e
 
 xsetroot -bg \#222229 -fg \#115522 -mod 16 16
 
@@ -13,4 +13,9 @@ xsetroot -bg \#222229 -fg \#115522 -mod 16 16
 #  install package openbsd-backgrounds
 #  then uncomment:
 #
+# if test -x /usr/local/bin/openbsd-wallpaper
+# then
+# 	/usr/local/bin/openbsd-wallpaper
+# fi
+
 # sxpm OpenBSD.xpm &

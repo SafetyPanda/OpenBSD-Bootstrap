@@ -4,18 +4,23 @@ echo -n "Move dotfiles to which user? "
 read user
 
 echo "[*] Installing necessary software..."
-pkg_add feh i3lock scrot ImageMagick vim thunar chromium neofetch arandr ruby ruby-shims fish jdk portslist unzip
+pkg_add wget feh scrot ImageMagick vim thunar chromium neofetch arandr ruby ruby-shims fish jdk portslist unzip
 
-echo "[*] Copying dotfiles..."
+echo "[*] Copying dotfiles, config files, etc..."
 cp .fvwmrc /home/$user/.fvwmrc
 cp .vimrc /home/$user/.vimrc
 cp .Xdefaults /home/$user/.Xdefaults
-mv .config /home/$user/
+mkdir /home/$user/.config/images
+cp ./openbsd-dark/background.png /home/$user/.config/images/wallpaper.png
+cp helpers.rc /home/$user/.config/xfce4/helpers.rc
 
 echo "exec fvwm" >> /home/$user/.xinitrc
 
-echo "[*] Make Dev folder"
+echo "[*] Make folders for Home folder"
 mkdir /home/$user/dev
+mkdir /home/$user/Documents
+mkdir /home/$user/Pictures
+mkdir /home/$user/Music
 
 echo "[*] Chown -R Home Folder"
 chown -R $user /home/$user
@@ -41,13 +46,11 @@ echo "[*] Configure Memory Limits for Programs"
 usermod -G staff $user
 cp -f ./login.conf /etc/login.conf
 
-echo [*] Configure xenodm
+echo "[*] Disable XConsole, XenoDM colors"
 cp -f ./Xsetup_0 /etc/X11/xenodm/Xsetup_0
-
-
 
 echo "[*] Run Syspatch"
 syspatch
 
-echo "[*] Done."
+echo "Done! Please Reboot!"
 neofetch
