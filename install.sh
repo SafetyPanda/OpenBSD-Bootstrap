@@ -4,7 +4,7 @@ echo -n "Move dotfiles to which user? "
 read user
 
 echo "[*] Installing necessary software..."
-pkg_add wget feh scrot ImageMagick vim thunar chromium neofetch arandr ruby ruby-shims fish jdk portslist unzip
+pkg_add wget feh scrot ImageMagick vim thunar chromium neofetch arandr ruby ruby-shims fish jdk portslist unzip ffmpeg
 
 echo "[*] Copying dotfiles, config files, etc..."
 cp .fvwmrc /home/$user/.fvwmrc
