@@ -1,6 +1,6 @@
-# dotfiles
+# OpenBSD Bootstrap
 
-My OpenBSD dotfiles.
+My OpenBSD dotfiles and packages I use.
 Shamelessly stolen and modifed from: https://www.github.com/crhenr/dotfiles
 
 ## How to install
