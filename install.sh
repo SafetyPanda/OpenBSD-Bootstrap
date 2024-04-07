@@ -8,9 +8,10 @@ pkg_add wget feh scrot ImageMagick vim thunar chromium neofetch arandr ruby ruby
 
 echo "[*] Copying dotfiles, config files, etc..."
 cp .fvwmrc /home/$user/.fvwmrc
-cp .vimrc /home/$user/.vimrc
-cp .Xdefaults /home/$user/.Xdefaults
-mkdir /home/$user/.config/images
+cp vimrc /home/$user/.vimrc
+cp Xdefaults /home/$user/.Xdefaults
+mkdir -p /home/$user/.config/images
+mkdir -p /home/$user/.config/xfce4
 cp ./openbsd-dark/background.png /home/$user/.config/images/wallpaper.png
 cp helpers.rc /home/$user/.config/xfce4/helpers.rc
 
